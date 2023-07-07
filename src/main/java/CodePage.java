@@ -11,6 +11,5 @@ public class CodePage {
     private By cloneSsh = By.cssSelector("[value*='XiJ2xGxm8KnELKh8rx7QLhDjl8Vw']");
     private By cloneGithubCli = By.cssSelector("[value*='ZqH8lBdRijGyzyj6fVTTbn']");
     private By copyToTheRepository = By.cssSelector("[class$='ClipboardButton js-clone-url-http']");
-
     private By openWithGithubDesctop = By.cssSelector("a[data-action=\"click:get-repo#showDownloadMessage\"]");
 }
