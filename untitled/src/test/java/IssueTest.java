@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class IssueTest extends BaseTest {
     @Test
-    public void checkLoginIsSuccessful() {
+    public void checkTheIssueTab() {
         HomePage home = new HomePage(driver);
         home.goToLoginPage().loginSuccessful("mari444ka1991@gmail.com", "More2023");
         MainPage mainPage = new MainPage(driver);

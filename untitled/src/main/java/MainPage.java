@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 
 public class MainPage extends BasePage {
 
-    By imgLocator = By.xpath("//img[@class='avatar circle'][1]");
-    By buttonPersonalLogo = By.cssSelector("button[class*='AppHeader-logo Button--invisible']");
-    By yourRepositories = By.xpath("//span[contains(text(),'Your repositories')]");
+    private By imgLocator = By.xpath("//img[@class='avatar circle'][1]");
+    private By buttonPersonalLogo = By.cssSelector("button[class*='AppHeader-logo Button--invisible']");
+    private By yourRepositories = By.xpath("//span[contains(text(),'Your repositories')]");
 
     public WebElement getLogoForMenu() {
         return driver.findElement(buttonPersonalLogo);
