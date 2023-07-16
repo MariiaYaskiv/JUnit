@@ -9,9 +9,9 @@ public class RepositoriesPage extends BasePage {
 
     List<WebElement> repositoriesList = driver.findElements(By.xpath("//a[@itemprop=\"name codeRepository\"]"));
     By repository = By.xpath("//h3[@class='wb-break-all']");
-
+    private final static String TITLE = "Repositories page";
     public RepositoriesPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public List<String> getRepositories() {
