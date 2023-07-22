@@ -1,6 +1,9 @@
+import helpers.Level;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import static helpers.ColorPrinter.printColorMessage;
 
 public class IssuesPage extends BasePage {
     private By issuesTab = By.xpath("//a[@id=\"issues-tab\"]");
@@ -13,9 +16,9 @@ public class IssuesPage extends BasePage {
     private By buttonSaveUpdating = By.cssSelector("button[data-disable-with='Updating']");
     private By commentIssue = By.cssSelector("textarea[name='comment[body]']");
     private By closeIssue = By.cssSelector("span[data-default-action-text='Close issue']");
-
+    private final static String TITLE = "Issue page";
     public IssuesPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public WebElement getIssuesTab() {
@@ -30,6 +33,7 @@ public class IssuesPage extends BasePage {
         driver.findElement(issueTitle).sendKeys(text1);
         driver.findElement(issueBody).sendKeys(text2);
         driver.findElement(submitButton).click();
+        printColorMessage("Sending issue text was successful", logger, Level.INFO);
         return new IssuesPage(driver);
     }
 
@@ -41,6 +45,7 @@ public class IssuesPage extends BasePage {
         driver.findElement(typeToUpdateIssue).sendKeys(text1);
         driver.findElement(commentIssue).sendKeys(text2);
         driver.findElement(buttonSaveUpdating).click();
+        printColorMessage("Updating issue text was successful", logger, helpers.Level.INFO);
         return new IssuesPage(driver);
     }
 
